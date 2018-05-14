@@ -4,7 +4,10 @@
   "description": "license-server implementation for software licensing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --plugin markdown --ext js,md .",
+    "test": "mocha --check-leaks --bail --no-exit --reporter spec test/",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --check-leaks --no-exit --reporter dot test/",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --check-leaks --no-exit --reporter spec test/"
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,21 @@
   "bugs": {
     "url": "https://github.com/devfans/node-license-server/issues"
   },
-  "homepage": "https://github.com/devfans/node-license-server#readme"
+  "devDependencies": {
+    "after": "0.8.2",
+    "eslint": "3.19.0",
+    "eslint-plugin-markdown": "1.0.0-beta.6",
+    "istanbul": "1.0.0-alpha.2",
+    "machine-digest": "0.0.3",
+    "mocha": "2.5.3",
+    "node-fetch": "^2.1.2",
+    "supertest": "1.1.0"
+  },
+  "homepage": "https://github.com/devfans/node-license-server#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "redis-async-wrapper": "0.0.5",
+    "winston": "^3.0.0-rc5"
+  }
 }
