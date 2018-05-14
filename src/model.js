@@ -21,10 +21,10 @@ const Formats = {
 };
 
 const PrivateKey = {
-  key: fs.readFileSync(path.join(__dirname, config.rsa_private_key)).toString(),
+  key: fs.readFileSync(config.rsa_private_key).toString(),
   passphrase: config.rsa_passphrase
 }
-const PublicKey = fs.readFileSync(path.join(__dirname, config.rsa_public_key)).toString()
+const PublicKey = fs.readFileSync(config.rsa_public_key).toString()
 
 const LicenseKey = dal? new dal.Redis_Hash({tpl: Formats.key}) : {}
 
