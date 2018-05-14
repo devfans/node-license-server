@@ -60,14 +60,15 @@ LicenseKey.validate = (key) => {
 
 LicenseKey.issue = async (options={}) => {
   const meta = {
-    identity: config.identity,
+    identity: config.identity || 'Software',
     persist: options.persist? 1: 0,
-    startDate: options.startDate,
-    endDate: options.endDate
+    startDate: options.startDate || Date.now(),
+    endDate: options.endDate || Date.now() + config.expireAfter,
+    issueDate: Date.now()
   }
   const buf = Buffer.from(JSON.stringify(meta), 'utf8')
   const key = utils.crypt(PrivateKey, buf, true).toString('hex')
-  const data = { revoked: 0, issueDate: Date.now() }
+  const data = { revoked: 0, issueDate: meta.issueDate }
   if (!config.stateless) LicenseKey.hmset([key], data)
   return {status: errors.SUCCESS, key }
 }
