@@ -1,5 +1,5 @@
 process.env['NODE_ENV'] = '';
-const logger = require('./logger');
+const logger = require('./src/logger');
 
 let port = 3000
 
@@ -12,7 +12,7 @@ if (process.env['NODE_ENV'] == 'production') {
   console.error = logger.error.bind(logger)
 }
 
-const app = require('./app');
+const app = require('./src/app');
 
 // Start listening for requests.
 app.listen(port, '0.0.0.0');

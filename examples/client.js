@@ -5,8 +5,8 @@ const fetch = require('node-fetch')
 const fs = require('fs')
 const crypto = require('crypto')
 const path = require('path')
-const logger = require('../logger')
-const utils = require('../utils')
+const logger = require('../src/logger')
+const utils = require('../src/utils')
 
 md.secret = "client software"
 
