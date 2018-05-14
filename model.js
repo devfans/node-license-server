@@ -79,4 +79,4 @@ LicenseKey.revoke = async (key) => {
 
 
 
-module.exports = { LicenseKey, PublicKey, PrivateKey }
+module.exports = { LicenseKey }
