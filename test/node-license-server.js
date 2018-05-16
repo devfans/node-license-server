@@ -2,7 +2,6 @@ process.env.NO_DEPRECATION = 'node-license-server';
 
 var after = require('after')
 var assert = require('assert')
-var app = require('../app')
 var config = require('../config')
 var fs = require('fs')
 var utils = require('../utils')
@@ -17,7 +16,6 @@ var PublicKey = fs.readFileSync(path.join(__dirname, '../', config.rsa_public_ke
 
 describe('node-license-server', function(){
   it('get function', function(){
-    assert.equal(typeof apph, 'function')
   })
 
   it('should success', function() {
