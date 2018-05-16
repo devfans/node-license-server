@@ -5,13 +5,14 @@ var assert = require('assert')
 var config = require('../config')
 var fs = require('fs')
 var utils = require('../src/utils')
+var path = require('path')
 
 var PrivateKey = {
-  key: fs.readFileSync(path.join(__dirname, '../', config.rsa_private_key)).toString(),
+  key: fs.readFileSync(config.rsa_private_key).toString(),
   passphrase: config.rsa_passphrase
 }
 
-var PublicKey = fs.readFileSync(path.join(__dirname, '../', config.rsa_public_key)).toString()
+var PublicKey = fs.readFileSync(config.rsa_public_key).toString()
 
 
 describe('node-license-server', function(){
