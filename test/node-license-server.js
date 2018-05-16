@@ -4,7 +4,7 @@ var after = require('after')
 var assert = require('assert')
 var config = require('../config')
 var fs = require('fs')
-var utils = require('../utils')
+var utils = require('../src/utils')
 
 var PrivateKey = {
   key: fs.readFileSync(path.join(__dirname, '../', config.rsa_private_key)).toString(),
