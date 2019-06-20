@@ -1,6 +1,6 @@
 {
   "name": "node-license-server",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "license-server implementation for software licensing",
   "main": "index.js",
   "scripts": {
