@@ -10,7 +10,7 @@ client software licensing server
 ```
 git clone https://github.com/devfans/node-license-server.git
 cd node-license-server
-node index.js
+npm start
 
 ```
 
@@ -18,11 +18,11 @@ node index.js
 
 The licensing server will generate client software license to permit client software to run when software user trys to run it at the first time, and the license can be saved locally to be reused for the bound machine. The main flow should be like:
 
-1. License server add a batch of license keys into the database, the keys can be encrypted strings by server RSA private key which will contains the informations including expiration time. 
-2. Software holder issue license keys to software users.
+1. License server adds a batch of license keys into the database, the keys can be encrypted strings by server RSA private key which will contains the informations including expiration time. 
+2. Software holder issues license keys to software users.
 3. Client software should generate a unique ID of the client machine to identify the unique hardware, which can be achived using modules like `machine-digest`, and post the key and machine uuid to license server.
-4. License server bind the key with the machine uuid, and generate a license file with RSA private key.
-5. Client software save the license file locally and verify license with server's RSA public key. Client software can also set a daily timer to check the expiration of the key.
+4. License server binds the key with the machine uuid, and generate a license file with RSA private key.
+5. Client software saves the license file locally and verifys license with server's RSA public key. Client software can also set a daily timer to check the expiration of the key.
 
 ## Client module: node-license-client
 
