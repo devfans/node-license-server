@@ -20,7 +20,7 @@ The licensing server will generate client software license to permit client soft
 
 1. License server adds a batch of license keys into the database, the keys can be encrypted strings by server RSA private key which will contains the informations including expiration time. 
 2. Software holder issues license keys to software users.
-3. Client software should generate a unique ID of the client machine to identify the unique hardware, which can be achived using modules like `machine-digest`, and post the key and machine uuid to license server.
+3. Client software should generate a unique ID of the client machine to identify the unique hardware, which can be achieved using modules like `machine-digest`, and post the key and machine uuid to license server.
 4. License server binds the key with the machine uuid, and generate a license file with RSA private key.
 5. Client software saves the license file locally and verifys license with server's RSA public key. Client software can also set a daily timer to check the expiration of the key.
 
